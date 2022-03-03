@@ -1,0 +1,25 @@
+[
+    {
+        "@type": "Scenario",
+        "title": "Sunburst Attack IOC Hunt",
+        "description": "Sunburst Attack Hunt",
+        "createdAlertsID": null,
+        "steps": {
+            "Steps": [
+                {
+                    "name": "Sunburst Attack - IOC Hunt",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/5e089adf-f672-4549-be1a-de9352ecc35a",
+                    "preCreateMessage": "Creating demo hunt record for Sunburst Attack",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "configuration": null,
+        "uuid": "e56423aa-7d90-4200-87d0-e982adf6eed3",
+        "recordTags": [
+            "Sunburst"
+        ]
+    }
+]
