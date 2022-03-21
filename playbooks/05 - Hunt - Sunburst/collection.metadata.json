@@ -1,7 +1,7 @@
 {
     "@context": "\/api\/3\/contexts\/WorkflowCollection",
     "@type": "WorkflowCollection",
-    "name": "15 - Hunt - Sunburst",
+    "name": "05 - Hunt - Sunburst",
     "description": null,
     "visible": true,
     "image": null,
