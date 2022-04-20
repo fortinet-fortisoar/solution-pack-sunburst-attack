@@ -11,7 +11,6 @@
     "remoteExecutableFlag": false,
     "parameters": [],
     "synchronous": false,
-    "lastModifyDate": 1646312851,
     "collection": "\/api\/3\/workflow_collections\/e2c1a8f3-00dc-4e82-a9f0-5e9957529407",
     "versions": [],
     "triggerStep": "\/api\/3\/workflow_steps\/ab590fdb-5c30-4665-b53f-e1eceb2ffa44",
@@ -99,7 +98,7 @@
                                 "templateUrl": "app\/components\/form\/fields\/datetime.html",
                                 "defaultValue": {
                                     "differenceType": "mins",
-                                    "differenceValue": 1
+                                    "differenceValue": -1
                                 },
                                 "_previousName": "huntStartDate",
                                 "lengthConstraint": false,
@@ -110,12 +109,12 @@
                         ]
                     }
                 },
-                "record": "{{vars.input.records[0]['@id']}}",
+                "record": "",
                 "resources": "scenario",
                 "owner_detail": {
                     "isAssigned": false
                 },
-                "isRecordLinked": true,
+                "isRecordLinked": false,
                 "step_variables": [],
                 "response_mapping": {
                     "options": [
