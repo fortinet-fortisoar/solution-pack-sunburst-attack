@@ -272,37 +272,6 @@
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
             "uuid": "da9e9cea-25df-4e56-8cba-a1973ca0e4d8"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Create Communication Record",
-            "description": null,
-            "arguments": {
-                "resource": {
-                    "to": "{{vars.toEmail}}",
-                    "type": "\/api\/3\/picklists\/b8e7c917-5299-4a43-9c1a-fac1d9a5438f",
-                    "hunts": "{{vars.input.records[0]['@id']}}",
-                    "subject": "Sunburst IOCs Found",
-                    "__replace": "",
-                    "recordTags": [
-                        "\/api\/3\/tags\/sunburst"
-                    ],
-                    "msgDirection": "\/api\/3\/picklists\/9f0a2594-2390-4086-9b6f-c7165c70ce27"
-                },
-                "_showJson": false,
-                "operation": "Overwrite",
-                "collection": "\/api\/3\/communication",
-                "__recommend": [],
-                "fieldOperation": {
-                    "recordTags": "Overwrite"
-                },
-                "step_variables": []
-            },
-            "status": null,
-            "top": "975",
-            "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "uuid": "85721fda-9e71-487c-9101-add95dd758bd"
         }
     ],
     "routes": [
@@ -359,15 +328,6 @@
             "label": null,
             "isExecuted": false,
             "uuid": "a0968435-e369-4eb8-93a1-95b888058909"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Create Alert -> Create Communication Record",
-            "targetStep": "\/api\/3\/workflow_steps\/85721fda-9e71-487c-9101-add95dd758bd",
-            "sourceStep": "\/api\/3\/workflow_steps\/da9e9cea-25df-4e56-8cba-a1973ca0e4d8",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "316b0a4e-982a-4d98-97e3-32be9028d6f2"
         }
     ],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
