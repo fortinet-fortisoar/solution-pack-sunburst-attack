@@ -12,10 +12,11 @@
     "parameters": [
         "indicator_value",
         "indicator_type",
-        "indicator_iri"
+        "indicator_iri",
+        "hunt_start_date",
+        "hunt_end_date"
     ],
     "synchronous": false,
-    "lastModifyDate": 1646312851,
     "collection": "\/api\/3\/workflow_collections\/e2c1a8f3-00dc-4e82-a9f0-5e9957529407",
     "versions": [],
     "triggerStep": "\/api\/3\/workflow_steps\/ee187b63-6479-4ce7-be1c-382df56a6504",
@@ -28,8 +29,10 @@
                 "step_variables": {
                     "input": {
                         "params": {
+                            "hunt_end_date": "{{ vars.hunt_end_date }}",
                             "indicator_iri": "{{ vars.indicator_iri }}",
                             "indicator_type": "{{ vars.indicator_type }}",
+                            "hunt_start_date": "{{ vars.hunt_start_date }}",
                             "indicator_value": "{{ vars.indicator_value }}"
                         }
                     }
@@ -116,7 +119,7 @@
             },
             "status": null,
             "top": "435",
-            "left": "475",
+            "left": "1175",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
             "uuid": "37dc1b88-e623-45cf-a0a3-cd7195d1cf63"
         },
@@ -129,7 +132,7 @@
             },
             "status": null,
             "top": "435",
-            "left": "1175",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
             "uuid": "c530e939-94a4-4759-8f3a-46f2a00f2296"
         },
@@ -157,11 +160,11 @@
                     "query": "{{vars.splunk_query}}",
                     "exec_mode": "One Shot",
                     "auto_cancel": "0",
-                    "latest_time": "",
-                    "earliest_time": "-24h",
+                    "latest_time": "{{vars.latestTime}}",
+                    "earliest_time": "{{vars.earliestTime}}",
                     "additional_search_args": "{\"max_count\": \"10\"}"
                 },
-                "version": "1.6.0",
+                "version": "1.6.2",
                 "connector": "splunk",
                 "operation": "invoke_search",
                 "mock_result": "{\n  \"data\": {\n    \"tags\": {\n      \"eventtype\": {\n        \"err0r\": [\n          \"error\"\n        ],\n        \"nix_errors\": [\n          \"error\"\n        ]\n      }\n    },\n    \"fields\": [\n      {\n        \"name\": \"action\",\n        \"groupby_rank\": \"0\"\n      },\n      {\n        \"name\": \"srcip\",\n        \"groupby_rank\": \"1\"\n      },\n      {\n        \"name\": \"source\",\n        \"groupby_rank\": \"2\"\n      },\n      {\n        \"name\": \"eventtype\",\n        \"groupby_rank\": \"3\"\n      },\n      {\n        \"name\": \"count\"\n      }\n    ],\n    \"preview\": false,\n    \"results\": [\n      {\n        \"count\": \"2\",\n        \"srcip\": \"{{vars.input.params['indicator_value']}}\",\n        \"action\": \"login\",\n        \"source\": \"udp:514\",\n        \"eventtype\": \"err0r\"\n      },\n      {\n        \"count\": \"2\",\n        \"srcip\": \"{{vars.input.params['indicator_value']}}\",\n        \"action\": \"login\",\n        \"source\": \"udp:514\",\n        \"eventtype\": \"nix_errors\"\n      }\n    ],\n    \"messages\": [],\n    \"highlighted\": {},\n    \"init_offset\": 0\n  },\n  \"status\": \"Success\",\n  \"_status\": true,\n  \"message\": \"\",\n  \"operation\": null,\n  \"request_id\": null\n}",
@@ -174,7 +177,7 @@
             },
             "status": null,
             "top": "570",
-            "left": "475",
+            "left": "1175",
             "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
             "uuid": "e81b4f50-b17b-4d66-856a-00979cdfeec8"
         },
@@ -184,6 +187,8 @@
             "description": null,
             "arguments": {
                 "ioc_found": "false",
+                "latestTime": "{{arrow.get((vars.input.params['hunt_end_date'] | int | abs )).format('MM\/DD\/YYYY HH:mm:ss')}}",
+                "earliestTime": "{{arrow.get((vars.input.params['hunt_start_date'] | int | abs )).format('MM\/DD\/YYYY HH:mm:ss')}}",
                 "useMockOutput": "{{globalVars.Demo_mode}}"
             },
             "status": null,
@@ -252,7 +257,7 @@
             },
             "status": null,
             "top": "705",
-            "left": "475",
+            "left": "1175",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
             "uuid": "8c18a670-8757-47f6-a38f-f101f8e64f9d"
         },
@@ -280,11 +285,11 @@
                     "query": "{{vars.splunk_query}}",
                     "exec_mode": "One Shot",
                     "auto_cancel": "0",
-                    "latest_time": "",
-                    "earliest_time": "-24h",
+                    "latest_time": "{{vars.latestTime}}",
+                    "earliest_time": "{{vars.earliestTime}}",
                     "additional_search_args": "{\"max_count\": \"10\"}"
                 },
-                "version": "1.6.0",
+                "version": "1.6.2",
                 "connector": "splunk",
                 "operation": "invoke_search",
                 "mock_result": "{\n  \"data\": {\n    \"tags\": {\n      \"eventtype\": {\n        \"nix-all-logs\": [\n          \"nix-all-logs\"\n        ],\n        \"nix_errors\": [\n          \"nix-all-logs\"\n        ]\n      }\n    },\n    \"fields\": [\n      {\n        \"name\": \"action\",\n        \"groupby_rank\": \"0\"\n      },\n      {\n        \"name\": \"url\",\n        \"groupby_rank\": \"1\"\n      },\n      {\n        \"name\": \"clientip\",\n        \"groupby_rank\": \"2\"\n      },\n      {\n        \"name\": \"method\",\n        \"groupby_rank\": \"3\"\n      },\n      {\n        \"name\": \"count\"\n      }\n    ],\n    \"preview\": false,\n    \"results\": [\n      {\n        \"count\": \"2\",\n        \"url\": \"{{vars.input.params['indicator_value']}}\",\n        \"action\": \"addtocart\",\n        \"clientip\": \"192.168.50.35\",\n        \"method\": \"post\"\n      },\n      {\n        \"count\": \"2\",\n        \"url\": \"{{vars.input.params['indicator_value']}}\",\n        \"action\": \"addtocart\",\n        \"clientip\": \"192.168.51.55\",\n        \"method\": \"post\"\n      }\n    ],\n    \"messages\": [],\n    \"highlighted\": {},\n    \"init_offset\": 0\n  },\n  \"status\": \"Success\",\n  \"_status\": true,\n  \"message\": \"\",\n  \"operation\": null,\n  \"request_id\": null\n}",
@@ -312,11 +317,11 @@
                     "query": "{{vars.splunk_query}}",
                     "exec_mode": "One Shot",
                     "auto_cancel": "0",
-                    "latest_time": "",
-                    "earliest_time": "-24h",
+                    "latest_time": "{{vars.latestTime}}",
+                    "earliest_time": "{{vars.earliestTime}}",
                     "additional_search_args": "{\"max_count\": \"10\"}"
                 },
-                "version": "1.6.0",
+                "version": "1.6.2",
                 "connector": "splunk",
                 "operation": "invoke_search",
                 "mock_result": "{\n  \"data\": {\n    \"tags\": {},\n    \"fields\": [\n      {\n        \"name\": \"earliest\",\n        \"groupby_rank\": \"0\"\n      },\n      {\n        \"name\": \"latest\",\n        \"groupby_rank\": \"1\"\n      },\n      {\n        \"name\": \"count\"\n      }\n    ],\n    \"preview\": false,\n    \"results\": [\n      {\n        \"count\": \"2\",\n        \"ut_domain \": \"{{vars.input.params['indicator_value']}}\",\n        \"earliest\": \"1600944248\",\n        \"latest\": \"1600969448\"\n      },\n      {\n        \"count\": \"2\",\n        \"ut_domain \": \"{{vars.input.params['indicator_value']}}\",\n        \"earliest\": \"1600944248\",\n        \"latest\": \"1600969448\"\n      }\n    ],\n    \"messages\": [],\n    \"highlighted\": {},\n    \"init_offset\": 0\n  },\n  \"status\": \"Success\",\n  \"_status\": true,\n  \"message\": \"\",\n  \"operation\": null,\n  \"request_id\": null\n}",
@@ -329,7 +334,7 @@
             },
             "status": null,
             "top": "570",
-            "left": "1175",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
             "uuid": "58cdfcab-f3e4-407c-a86a-1035c7d30265"
         },
@@ -355,7 +360,7 @@
             },
             "status": null,
             "top": "840",
-            "left": "475",
+            "left": "1175",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
             "uuid": "eb5ddbb9-f7ab-4eaa-8f73-35144d0a84ae"
         },
@@ -403,7 +408,7 @@
             },
             "status": null,
             "top": "705",
-            "left": "1175",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
             "uuid": "55dbe864-b2f1-44fa-9c26-6bf4b600740c"
         },
@@ -429,7 +434,7 @@
             },
             "status": null,
             "top": "840",
-            "left": "1175",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
             "uuid": "f45dd0a3-0261-4fb0-9e83-68ae7208adde"
         }
@@ -536,15 +541,6 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Configuration -> Check Indicator Type",
-            "targetStep": "\/api\/3\/workflow_steps\/a51e2362-5877-42e9-92a0-3aa47633177d",
-            "sourceStep": "\/api\/3\/workflow_steps\/b63379ea-3586-4926-8a9a-18909f578c1c",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "b9fa512d-4386-4b1f-9220-f2a63ae36582"
-        },
-        {
-            "@type": "WorkflowRoute",
             "name": "Query Spunk -> Format Spunk Summary",
             "targetStep": "\/api\/3\/workflow_steps\/8c18a670-8757-47f6-a38f-f101f8e64f9d",
             "sourceStep": "\/api\/3\/workflow_steps\/e81b4f50-b17b-4d66-856a-00979cdfeec8",
@@ -632,6 +628,15 @@
             "label": "Domain",
             "isExecuted": false,
             "uuid": "1232b32a-2c5e-4e6b-8e0f-ae84dc2b9dfb"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Configuration -> Check Indicator Type",
+            "targetStep": "\/api\/3\/workflow_steps\/a51e2362-5877-42e9-92a0-3aa47633177d",
+            "sourceStep": "\/api\/3\/workflow_steps\/b63379ea-3586-4926-8a9a-18909f578c1c",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "3c7f2ec2-5a8b-4b3e-b963-f7e1a8251d37"
         }
     ],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
