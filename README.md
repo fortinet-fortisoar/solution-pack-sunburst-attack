@@ -1,5 +1,3 @@
-# Sunburst Attack Solution Pack
-
 ## Release Information
 
 - Solution Pack Version: 1.0.0
@@ -11,32 +9,32 @@
 
 ### Introduction
 
-*Sunburst Attack* solution pack is designed to provide a set of investigation playbooks to hunt of indicators related to the Sunburst Attack.
+**Sunburst Attack Solution Pack** is designed to provide a set of investigation playbooks to hunt the indicators related to the Sunburst Attack.
 
-Download IOC's from CSV file and Create Indicators in FortiSOAR™. Hunt the Sunburst Indicators using the Fortinet FortiEDR and Splunk.
+Download IOC's from CSV file and Create Indicators in FortiSOAR™. Hunt the Sunburst Indicators using Fortinet's FortiEDR and Splunk.
 
-Configure the Fortinet FortiEDR and Splunk connector and then trigger the 'Sunburst IOC Hunt' playbook on 'Hunt - Sunburst Attack' hunt record to Hunt Sunburst Indicators.
+Configure the Fortinet FortiEDR and Splunk connector and then trigger the **Sunburst IOC Hunt** playbook on **Hunt - Sunburst Attack** hunt record to Hunt Sunburst Indicators.
 
 Refer to Simulation Scenario - "Sunburst Attack IOC Hunt" to experience the use case without any connector configuration.
 
 ### Usage
 
-This Solution Pack ships with the following simulation scenarios. [Refer](https://github.com/fortinet-fortisoar/solution-pack-soc-simulator/blob/develop/docs/solution-pack-guide.md) to Simulate Scenario documentation to understand how to Simulate and Reset Scenario.
+Refer to [Simulate Scenario documentation](https://github.com/fortinet-fortisoar/solution-pack-soc-simulator/blob/develop/docs/solution-pack-guide.md) to understand how to Simulate and Reset scenarios.
+
+This Solution Pack ships with the following simulation scenarios.
 
 #### 1. Scenario - Sunburst Attack IOC Hunt
 
-The scenario generates a demo hunt record 'Hunt - Sunburst Attack'.
+The scenario generates a demo hunt record **Hunt - Sunburst Attack**.
 
-Goto generated hunt record and observe the following:
+Navigate to the generated hunt record and observe that the Hunt Time Range i.e Hunt Start Date and Hunt End Date to download the IOC from the specified URL.
 
-- Hunt Time Range i.e Hunt Start Date and Hunt End Date to download the IOC from the specified URL.
+**Sunburst IOC Hunt** : Launch **Sunburst IOC Hun** Playbook and observe various investigation activities such as
 
-**Sunburst IOC Hunt** : Launch "Sunburst IOC Hun" Playbook and observe various investigation activities such as
-
-- Download IOCs from CSV file.
-- Created Indicator.
-- Hunt Sunburst Indicators.
-- Created 'Sunburst' type Alert.
+- Downloading IOCs from CSV file.
+- Creating Indicators.
+- Hunting Sunburst Indicators.
+- Creating 'Sunburst' type Alert.
 
 ## Prerequisites
 
@@ -47,13 +45,7 @@ Goto generated hunt record and observe the following:
 
 ## Contents
 
-1. Global Variable(s)
-    - Demo_mode
-    - QRadarTimeZone
-
-2. Record Set(s)
-    - Scenario: Sunburst Attack IOC Hunt
-3. Connector(s)
+1. Connector(s)
     |**SN**|**Connector Name**|
     | :- | :- |
     |1|Fortinet FortiEDR|
@@ -61,6 +53,12 @@ Goto generated hunt record and observe the following:
     |3|Splunk|
 
      **Warning:** After deployment, this Solution Pack installs or upgrades the stated list of connectors.
+2. Global Variable(s)
+    - Demo_mode
+    - QRadarTimeZone
+
+3. Record Set(s)
+    - Scenario: Sunburst Attack IOC Hunt
 4. Playbook Collection(s)
     - 05 - Hunt - Sunburst (3):
 
