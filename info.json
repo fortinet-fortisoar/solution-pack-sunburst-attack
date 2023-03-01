@@ -21,7 +21,6 @@
         }
     ],
     "prerequisite": "",
-    "certified": "false",
     "publisher": "Fortinet",
     "description": "This solution pack demonstrates the hunt of indicators related to the Sunburst Attack. A few important integrations used in the solution pack are Fortinet FortiEDR, Fortinet FortiGate and Splunk.",
     "help": "https://github.com/fortinet-fortisoar/solution-pack-sunburst-attack/blob/develop/README.md",
