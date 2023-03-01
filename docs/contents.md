@@ -28,7 +28,7 @@
 
 ## Playbook Collection
 
-|05 - Hunt - Sunburst (3)|
+|05 - Hunt - Sunburst|
 | :- |
 
 **Playbook Name**|**Description**|

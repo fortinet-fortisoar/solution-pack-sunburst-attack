@@ -3,7 +3,7 @@
 
 # Usage
 
-Refer to [Simulate Scenario documentation](https://github.com/fortinet-fortisoar/solution-pack-soc-simulator/blob/develop/docs/solution-pack-guide.md) to understand how to Simulate and Reset scenarios.
+Refer to [Simulate Scenario documentation](https://github.com/fortinet-fortisoar/solution-pack-soc-simulator/blob/develop/docs/usage.md) to understand how to Simulate and Reset scenarios.
 
 To understand the process FortiSOAR follows to respond to Sunburst attacks, we have included a scenario &mdash; **Sunburst Attack IOC Hunt** with this solution pack. Refer to the section [Phishing Email Scenario](#sunburst-attack-ioc-hunt) to understand how this solution pack's automation addresses your needs.
 
