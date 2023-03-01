@@ -27,3 +27,4 @@ For optimal performance of **Sunburst Attack** solution pack, you must configure
     * To configure and use the FortiEDR connector as a source of data ingestion, refer to [Configuring Fortinet FortiEDR](https://docs.fortinet.com/document/fortisoar/1.3.0/fortinet-fortiedr/161/fortinet-fortiedr-v1-3-0)
 * A SIEM solution
     * To configure and use the Fortinet FortiSIEM connector as a source of data ingestion, refer to [Configuring Fortinet FortiSIEM](https://docs.fortinet.com/document/fortisoar/4.3.2/fortinet-fortisiem/278/fortinet-fortisiem-v4-3-2)
+
