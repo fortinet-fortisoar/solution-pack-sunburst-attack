@@ -1,37 +1,36 @@
 {
     "name": "sunburstAttack",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "type": "solutionpack",
     "local": true,
+    "certified": false,
     "label": "Sunburst Attack",
     "dependencies": [
         {
             "name": "sOARFramework",
             "type": "solutionpack",
             "label": "SOAR Framework",
-            "version": "1.0.0",
-            "minVersion": null
+            "minVersion": "1.0.0"
         },
         {
             "name": "socSimulator",
             "type": "solutionpack",
             "label": "SOC Simulator",
-            "version": "1.0.1",
-            "minVersion": null
+            "minVersion": "1.0.1"
         }
     ],
     "prerequisite": "",
-    "certified": "false",
     "publisher": "Fortinet",
     "description": "This solution pack demonstrates the hunt of indicators related to the Sunburst Attack. A few important integrations used in the solution pack are Fortinet FortiEDR, Fortinet FortiGate and Splunk.",
     "help": "https://github.com/fortinet-fortisoar/solution-pack-sunburst-attack/blob/develop/README.md",
     "category": [
         "Threat Hunting and Search"
     ],
-    "supportInfo": "",
+    "supportInfo": null,
     "iconLarge": null,
     "fsrMinCompatibility": "7.2.0",
-    "date": "2022-04-11T07:49:22+00:00",
+    "postInstallConfig": null,
+    "date": "2023-03-01T10:29:19+00:00",
     "contents": {
         "playbooks": [
             {
@@ -40,16 +39,10 @@
         ],
         "globalVariables": [
             {
-                "id": 14,
-                "name": "Demo_mode",
-                "value": "true",
-                "default_value": "true"
-            },
-            {
-                "id": 16,
+                "id": 34,
                 "name": "QRadarTimeZone",
-                "value": "Asia\/Kolkata",
-                "default_value": "Asia\/Kolkata"
+                "value": "Asia/Kolkata",
+                "default_value": "Asia/Kolkata"
             }
         ],
         "connectors": [
