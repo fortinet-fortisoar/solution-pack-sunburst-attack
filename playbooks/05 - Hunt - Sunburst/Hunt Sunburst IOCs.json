@@ -4,7 +4,7 @@
     "name": "Hunt Sunburst IOCs",
     "aliasName": null,
     "tag": null,
-    "description": "Download IOCs from the threat intelligence feeds and hunt them.",
+    "description": "Download IOCs from the threat intelligence feeds and hunt them. Also link alerts and IOCs with Hunt.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

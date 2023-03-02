@@ -3,21 +3,20 @@
     "version": "1.0.2",
     "type": "solutionpack",
     "local": true,
+    "certified": false,
     "label": "Sunburst Attack",
     "dependencies": [
         {
             "name": "sOARFramework",
             "type": "solutionpack",
             "label": "SOAR Framework",
-            "version": "1.0.0",
-            "minVersion": null
+            "minVersion": "1.0.0"
         },
         {
             "name": "socSimulator",
             "type": "solutionpack",
             "label": "SOC Simulator",
-            "version": "1.0.1",
-            "minVersion": null
+            "minVersion": "1.0.1"
         }
     ],
     "prerequisite": "",
