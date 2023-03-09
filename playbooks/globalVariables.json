@@ -1,12 +1,6 @@
 [
     {
-        "id": 14,
-        "name": "Demo_mode",
-        "value": "true",
-        "default_value": "true"
-    },
-    {
-        "id": 16,
+        "id": 34,
         "name": "QRadarTimeZone",
         "value": "Asia\/Kolkata",
         "default_value": "Asia\/Kolkata"
