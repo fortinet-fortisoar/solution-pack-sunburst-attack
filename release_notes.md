@@ -1,3 +1,3 @@
 # What's New
 
-In the playbook **Hunt Sunburst IOCs** developed IOCs and Alerts were correlated with actual Hunts.
+- The playbook **Hunt Sunburst IOCs** now correctly correlates IOCs and Alerts to actual Hunts. Earlier the IOCs and alerts were created but were not being linked to the hunt.

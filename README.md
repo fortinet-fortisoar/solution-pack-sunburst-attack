@@ -7,13 +7,13 @@
 * [Release Notes](./release_notes.md)
 
 # Overview
-**Sunburst Attack Solution Pack** provides a set of investigation playbooks to hunt the indicators related to the Sunburst Attack.
+**Sunburst Attack Solution Pack** provides a set of investigation playbooks to hunt indicators related to the Sunburst attack.
 
-Download IOC's from CSV file and Create Indicators in FortiSOAR™. Hunt the Sunburst Indicators using Fortinet's FortiEDR and Splunk.
+Download indicators of compromise (IOC) from a CSV file and create indicators in FortiSOAR&trade;. Hunt the indicators, associated with Sunburst attack, using Fortinet's FortiEDR and Splunk.
 
-Configure the Fortinet FortiEDR and Splunk connector and then trigger the **Sunburst IOC Hunt** playbook on **Hunt - Sunburst Attack** hunt record to Hunt Sunburst Indicators.
+Configure the Fortinet FortiEDR and Splunk connector, trigger the **Sunburst IOC Hunt** playbook on **Hunt - Sunburst Attack** hunt record, and begin the hunt of indicators associated with the Sunburst attack.
 
 # Next Steps
 
-| [Installation](https://github.com/fortinet-fortisoar/solution-pack-sunburst-attack/blob/develop/docs/setup.md#installation) | [Configuration](https://github.com/fortinet-fortisoar/solution-pack-sunburst-attack/blob/develop/docs/setup.md#configuration) | [Usage](https://github.com/fortinet-fortisoar/solution-pack-sunburst-attack/blob/develop/docs/usage.md) | [Contents](https://github.com/fortinet-fortisoar/solution-pack-sunburst-attack/blob/develop/docs/contents.md) |
-|--------------------------------------------|----------------------------------------------|------------------------|------------------------------|
+| [Installation](./docs/setup.md#installation) | [Configuration](./docs/setup.md#configuration) | [Usage](./docs/usage.md) | [Contents](./docs/contents.md) |
+|----------------------------------------------|------------------------------------------------|--------------------------|--------------------------------|
